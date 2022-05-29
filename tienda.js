@@ -113,7 +113,18 @@ function quantityChanged(event) {
 }
 
 function comprarButtonClicked() {
-  shoppingCartItemsContainer.innerHTML = '';
-  updateShoppingCartTotal();
-}
-
+  Swal.fire({
+    title: 'Compra finalizada',
+    text: "Solo queda completar el email para recibir los datos",
+    icon: 'succes',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'finalizar compra'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        "y aca es donde tendrian que ir los datos.",
+      )
+    }
+  })}
